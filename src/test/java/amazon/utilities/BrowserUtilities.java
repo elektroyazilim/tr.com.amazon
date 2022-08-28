@@ -15,6 +15,7 @@ import java.io.*;
 import java.time.Duration;
 import java.util.*;
 
+
 public class BrowserUtilities {
     @Nullable // write data to properties file
     public static void writeDataToIdsFile(String tip, String id) { // room=123123
@@ -394,6 +395,12 @@ public class BrowserUtilities {
         return title;
     }
 
+    // clear textbox by javascript
+    public static void clearTxtboxByJs(WebElement element)
+    {
+        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
+        js.executeScript("arguments[0].value = '';", element);
+    }
 
     //------------asagıdaki js kodlarini check et ------------------------
 

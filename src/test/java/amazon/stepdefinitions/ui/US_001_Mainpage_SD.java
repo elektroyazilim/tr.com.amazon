@@ -23,14 +23,14 @@ public class US_001_Mainpage_SD {
         System.out.println("1");
     }
 
-    @Then("the user checks if the url contains {string}")
-    public void theUserChecksIfTheUrlContains(String urlText) {
+    @Then("the user verifies if the url contains {string}")
+    public void theUserVerifiesIfTheUrlContains(String urlText) {
         Assert.assertTrue(driver.getCurrentUrl().contains(urlText));
         System.out.println("2");
     }
 
-    @Then("the user checks if the logo link contains {string}")
-    public void theUserChecksIfTheLogoLinkContains(String urlText) {
+    @Then("the user verifies if the logo link contains {string}")
+    public void theUserVerifiesIfTheLogoLinkContains(String urlText) {
         String logoHref = mainpage.amazonLogoLink.getAttribute("href");
         Assert.assertTrue(logoHref.contains(urlText));
         System.out.println("3");
@@ -61,20 +61,22 @@ public class US_001_Mainpage_SD {
         System.out.println("5");
     }
 
-    @Then("the user checks the if Sign in popup is open")
-    public void theUserChecksTheIfSignInPopupIsOpen() {
+    @Then("the user verifies if Sign in popup is open")
+    public void theUserVerifiesIfSignInPopupIsOpen() {
         BrowserUtilities.waitForVisibility(mainpage.loginPopupOnHeader, 4);
         Assert.assertTrue(mainpage.loginPopupOnHeader.isDisplayed());
         System.out.println("6");
     }
 
-    @Then("the user checks if links on the popup are enabled")
-    public void theUserChecksIfLinksOnThePopupAreEnabled() {
+    @Then("the user verifies if links on the popup are enabled")
+    public void theUserVerifiesIfLinksOnThePopupAreEnabled() {
 
         for (WebElement link : mainpage.loginPopupLinksOnHeader) {
             System.out.println(link.getText());
             Assert.assertTrue(link.isEnabled());
         }
         System.out.println("7");
+        driver.close();
+
     }
 }
