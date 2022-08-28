@@ -26,4 +26,7 @@ public class Mainpage extends Base{
     @FindBy(css = "div#nav-flyout-accountList a")
     public List<WebElement> loginPopupLinksOnHeader;
 
+   @FindBy(xpath = "//span[text()='Giriş yap']/..")
+    public WebElement girisYapBtnHomePage;
+
 }
