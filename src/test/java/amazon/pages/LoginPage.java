@@ -18,6 +18,9 @@ public class LoginPage extends Base{
     @FindBy(css = "div.a-alert-content span")
     public WebElement upperAlertMessage;
 
+    @FindBy(css = "h4.a-alert-heading")
+    public WebElement upperAlertMessage2;
+
     @FindBy(xpath = "//label[contains(text(),'Şifre')]")
     public WebElement sifreLabel;
 

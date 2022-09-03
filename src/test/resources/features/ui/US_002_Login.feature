@@ -9,9 +9,10 @@ Feature: The user verifies if the login feature is functional.
     And the the user hover Accounts section
     Then the user verifies if Sign in popup is open
 
+  @US002_TC_001
   Scenario: TC_001 The user should not able to login with invalid email and missing credential datas
-    Then the user verifies if the Giriş yap button exists on Homepage
-    When the user clicks on the Giriş yap button on Homepage
+    Then the user verifies if the Giris yap button exists on Homepage
+    When the user clicks on the Giris yap button on Homepage
     Then the user verifies if the url contains "signin"
     # clicks the "Devam Et" button when textbox is empty
     When the user clicks on Devam Et button on Login Page
@@ -31,9 +32,10 @@ Feature: The user verifies if the login feature is functional.
     # Şifreniz yanlış
     Then the user verifies if the "Bir sorun oluştu: Şifreniz yanlış" error box appears
 
+  @US002_TC_002
   Scenario: TC_002 The user should not able to login with invalid phone and missing credential datas
-    Then the user verifies if the Giriş yap button exists on Homepage
-    When the user clicks on the Giriş yap button on Homepage
+    Then the user verifies if the Giris yap button exists on Homepage
+    When the user clicks on the Giris yap button on Homepage
     Then the user verifies if the url contains "signin"
     # user should enter phone
     When the user types the textbox any numbers like "12121"
@@ -43,20 +45,22 @@ Feature: The user verifies if the login feature is functional.
     And the user clicks on Devam Et button on Login Page
     Then the user verifies if the "Şifre" label exists
     # clicks on "Giriş yap" button when the texbox is empty
-    When the user clicks on Giriş yap button on Login page
+    When the user clicks on the Giris Yap button on Login Page
     Then the user verifies if "Şifrenizi girin" message appears
     When the user types on textbox any invalid credential password
-    Then the user verifies if the "Bir sorun oluştu Şifreniz yanlış" error box appears
+    And the user clicks on the Giris Yap button on Login Page
+    Then the user verifies if the "Bir sorun oluştu: Şifreniz yanlış" error box appears
 
   Scenario Outline: TC_003 The user should be able to login with valid credential datas
-    Then the user verifies if the Giriş yap button exists on Homepage
-    When the user clicks on the Giriş yap button on Homepage
+    Then the user verifies if the Giris yap button exists on Homepage
+    When the user clicks on the Giris yap button on Homepage
     Then the user verifies if the url contains "signin"
       # data is below can be "email" or "phone"
     When the user types valid credential "<data>" to the "email" textbox
-    And the user clicks on Devam Et button
+    And the user clicks on Devam Et button on Login Page
     Then the user verifies if the "Şifre" label exists
     When the user types valid credential "password" to the "password" textbox
+    And the user clicks on the Giris Yap button on Login Page
     Then the user verifies if the url contains "nav_signin"
     Examples:
       | data                |
