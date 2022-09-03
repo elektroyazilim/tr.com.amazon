@@ -15,9 +15,7 @@ Feature: The user controls some components on the main page.
 
 # 1. US_Kullanıcı anasayfa üzerinde bazı kontrolleri test eder
 #
-#- URL de https://www.amazon.com.tr/ref=nav_logo amazon.com olduğunu teyit eder
-#- Merhaba (Hesap ve Listeler) kısmının fonksiyonel olup olmadığını kontrol eder.
-#- amazon logosu  ve İadeler ve siparişler linkleri aktif mi?
+
 #
 #
 #TC_001 User checks components on the menu on the header

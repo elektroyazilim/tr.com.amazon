@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "amazon.stepdefinitions", // the path is taken from "copy reference"
-        tags = "@hata",
+        tags = "@US002_TC_001",
         dryRun = false  // defaultta false olacak.
 )
 
