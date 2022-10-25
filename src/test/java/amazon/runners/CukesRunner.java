@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "amazon.stepdefinitions", // the path is taken from "copy reference"
-        tags = "@US002_TC_001",
+        tags = "@smoke",
         dryRun = false  // defaultta false olacak.
 )
 
@@ -24,3 +24,11 @@ import org.junit.runner.RunWith;
 
 public class CukesRunner {
 }
+
+// https://www.toolsqa.com/cucumber/cucumber-tags/
+
+/*
+tags={"@smoke,@regression"}  --> OR
+tags={"@smoke","@regression"} --> AND
+tags={"@smoke","~@regression"} --> Skip Regression
+*/

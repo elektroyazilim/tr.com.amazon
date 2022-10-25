@@ -7,7 +7,7 @@ Feature: The user controls some components on the main page.
     Then the user checks if Orders link is enable
     When the user accepts the cookie
 
-  @hata
+  @US001_TC_001
   Scenario: TC_001 User checks components on the menu on the header
     And the the user hover Accounts section
     Then the user verifies if Sign in popup is open

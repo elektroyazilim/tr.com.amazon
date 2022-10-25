@@ -117,12 +117,5 @@ public class US_002_Login_SD {
             String password = ConfigurationReader.getPropertyFromProperties(data);
             loginPage.passwordTxt.sendKeys(password);
         }
-
-
-
     }
-
-
-
-
 }

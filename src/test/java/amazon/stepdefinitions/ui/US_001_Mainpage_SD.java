@@ -20,26 +20,23 @@ public class US_001_Mainpage_SD {
     @Given("the user navigates to {string}")
     public void theUserNavigatesTo(String url) {
         driver.get(ConfigurationReader.getPropertyFromProperties("environment") + url);
-        System.out.println("1");
+
     }
 
     @Then("the user verifies if the url contains {string}")
     public void theUserVerifiesIfTheUrlContains(String urlText) {
         Assert.assertTrue(driver.getCurrentUrl().contains(urlText));
-        System.out.println("2");
     }
 
     @Then("the user verifies if the logo link contains {string}")
     public void theUserVerifiesIfTheLogoLinkContains(String urlText) {
         String logoHref = mainpage.amazonLogoLink.getAttribute("href");
         Assert.assertTrue(logoHref.contains(urlText));
-        System.out.println("3");
     }
 
     @Then("the user checks if Orders link is enable")
     public void theUserChecksIfOrdersLinkIsEnable() {
         mainpage.orderLinkOnHeader.isEnabled();
-        System.out.println("4");
     }
 
     @When("the user accepts the cookie")
@@ -58,14 +55,12 @@ public class US_001_Mainpage_SD {
     public void theTheUserHoverAccountsSection() {
         Actions actions = new Actions(driver);
         actions.moveToElement(mainpage.accountsLoginSectionOnHeader).build().perform();
-        System.out.println("5");
     }
 
     @Then("the user verifies if Sign in popup is open")
     public void theUserVerifiesIfSignInPopupIsOpen() {
-        BrowserUtilities.waitForVisibility(mainpage.loginPopupOnHeader, 4);
+        BrowserUtilities.waitForVisibility(mainpage.loginPopupOnHeader, 7);
         Assert.assertTrue(mainpage.loginPopupOnHeader.isDisplayed());
-        System.out.println("6");
     }
 
     @Then("the user verifies if links on the popup are enabled")
@@ -75,7 +70,6 @@ public class US_001_Mainpage_SD {
             System.out.println(link.getText());
             Assert.assertTrue(link.isEnabled());
         }
-        System.out.println("7");
         driver.close();
 
     }
