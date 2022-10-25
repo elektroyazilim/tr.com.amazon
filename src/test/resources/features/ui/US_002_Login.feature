@@ -51,6 +51,7 @@ Feature: The user verifies if the login feature is functional.
     And the user clicks on the Giris Yap button on Login Page
     Then the user verifies if the "Bir sorun oluştu: Şifreniz yanlış" error box appears
 
+  @US002_TC_003
   Scenario Outline: TC_003 The user should be able to login with valid credential datas
     Then the user verifies if the Giris yap button exists on Homepage
     When the user clicks on the Giris yap button on Homepage
